@@ -61,8 +61,8 @@ a, _ = model.forward(dummy_image, joint_texts)
 
 joint_features = model.forward_text(joint_texts)  # type:torch.Tensor
 
-# model.forward = model.forward_all_features
-# torch_out = model.forward(dummy_image, joint_features).detach()
+model.forward = model.forward_all_features
+torch_out = model.forward(dummy_image, joint_features).detach()
 # torch.onnx.export(
 #     model,
 #     (dummy_image, joint_features),

@@ -6,7 +6,8 @@ speedup CLIB-FIQA by TensorRT，only focus only on image quality.
 ```bash
 git clone --recurse-submodules https://github.com/oneflyingfish/CLIB-TensorRT.git
 cd CLIB-TensorRT
-
+git submodule init
+git submodule update
 # if you have no model/CLIB-FIQA_R50_decode_e2e.engine, view # generate engine learn how to generate
 python3 main.py
 ```
