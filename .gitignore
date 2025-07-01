@@ -1,4 +1,3 @@
 dataset
 model
 __pycache__
-!model/CLIB-FIQA_R50_decode_e2e.onnx
