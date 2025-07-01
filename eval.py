@@ -124,7 +124,7 @@ bins = [0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11, 0.1
 hist, bin_edges = np.histogram(losses, bins=bins)
 freq = hist / len(losses)
 for i in range(len(bins) - 1):
-    print(f"probability in [{bins[i]}, {bins[i+1]}]: {freq[i]*100:.3f}%")
+    print(f"abs loss probability in [{bins[i]}, {bins[i+1]}]: {freq[i]*100:.3f}%")
 
 
 print("-------------------------------")
@@ -132,12 +132,13 @@ print("-------------------------------")
 imgs = []
 for i in range(1, 7):
     imgs.append(cv2.imread(f"CLIB_FIQA/samples/{i}.jpg"))
-    score_opts = np.array(run_opt(imgs))
-    score_raws = np.array(run_raw(imgs))
+score_opts = np.array(run_opt(imgs))
+score_raws = np.array(run_raw(imgs))
 
-    losses = np.abs(score_opts - score_raws)
-    losses_percentage = losses / score_raws
-    print(
-        f"loss percentage: {losses_percentage.mean().item(0)*100:.1f}%, abs loss: {np.max(losses).item(0):.3f}"
-    )
+losses = np.abs(score_opts - score_raws)
+losses_percentage = losses / score_raws
+print(f"raw score: {score_raws}")
+print(f"opt score: {score_opts}")
+print(f"loss percentage: {losses_percentage}")
+print(f"abs loss: {losses}")
 model_trt.release()
