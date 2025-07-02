@@ -18,3 +18,7 @@ python3 main.py
 python3 export.py
 python3 quant.py        # you need to set `calibration_dataset_path` to your calibration set path
 ```
+
+# Environment
+
+refer to [how to build environment in ubuntu](env.md)
