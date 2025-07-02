@@ -4,7 +4,6 @@ speedup CLIB-FIQA by TensorRT，only focus only on image quality.
 # usage
 
 ```bash
-git clone --recurse-submodules https://github.com/oneflyingfish/CLIB-TensorRT.git
 cd CLIB-TensorRT
 git submodule init
 git submodule update
