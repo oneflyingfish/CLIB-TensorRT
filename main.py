@@ -7,5 +7,5 @@ for i in range(7):
     img = cv2.imread(f"CLIB_FIQA/samples/{i}.jpg")
     if img is None:
         continue
-    print("score:", model_trt.predict([img])[0])
+    print(f"score-{i}.jpg:", model_trt.predict([img])[0])
 model_trt.release()
