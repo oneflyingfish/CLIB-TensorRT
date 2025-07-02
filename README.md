@@ -17,5 +17,5 @@ python3 main.py
 
 ```bash
 python3 export.py
-python3 quant.py
+python3 quant.py        # you need to set `calibration_dataset_path` to your calibration set path
 ```
